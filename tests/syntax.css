@@ -1,0 +1,206 @@
+@charset "UTF-8";
+
+/** Test @import */
+@import "test.css";
+@import url("test.css") all;
+@import "print.css" print;
+@import "tv.css" projection, tv;
+
+/** Test @media */
+@media test {
+	A { }
+}
+
+/** Test @page */
+@page { }
+@page test { }
+@page :first { }
+@page :left { }
+@page :right { }
+
+/* Test selectors */
+* { }
+E { }
+E F { }
+E > F { }
+E:first-child { }
+E:link { }
+E:visited { }
+E:active { }
+E:hover { }
+E:focus { }
+E:lang(c) { }
+E + F { }
+E[foo] { }
+E[foo="warning"] { }
+E[foo~="warning"] { }
+E[lang|="en"] { }
+E.warning { }
+E#myid { }
+
+/** Test selector grouping */
+A, B, C { }
+
+/** Test universal selector */
+[lang=fr] { }
+.warning { }
+#myid { }
+
+/** Test descendant selectors */
+DIV * P { }
+DIV P [href] { }
+
+/** Test child selectors */
+DIV OL>LI P { }
+
+/** Test attribute selectors */
+H1[title] { }
+SPAN[class=example] { }
+SPAN[hello="Cleveland"][goodbye="Columbus"] { }
+A[rel~="copyright"] { }
+A[href="http://www.w3.org/"] { }
+
+/** Test class selectors */
+P.pastoral.marine { }
+
+/** Test pseudo-elements */
+P:first-line { }
+P:first-letter { }
+P:before { }
+P:after { }
+
+/** Test multiple-line parsing */
+P[example="public class foo\
+{\
+    private int x;\
+\
+    foo(int x) {\
+        this.x = x;\
+    }\
+\
+}"] { }
+
+/** Test numeric properties */
+PA {
+	a: 12345;
+	b: 1.2345;
+	c: +2;
+	d: -2;
+	e: +2.5;
+	f: -2.5;
+}
+
+/** Test relative length properties */
+PB {
+	a: 0.5em;
+	b: 1ex;
+	c: 12px;
+}
+
+/** Test absolute length properties */
+PC {
+	a: 0.5in;
+	b: 3cm;
+	c: 4mm;
+	d: 12pt;
+	e: 1pc;
+}
+
+/** Test percentage properties */
+PD {
+	a: 50%;
+}
+
+/** Test URL properties */
+PE {
+	a: url("http://www.test.com/");
+	b: url(http://www.test.com/);
+	c: url(http://www.test\)\(.com/);
+}
+
+/** Test counters properties */
+PF {
+	counter-increment: test;
+	counter-reset: test;
+	a: counter(test, upper-roman) ". ";
+}
+
+/** Test color properties */
+PG {
+	a: aqua;
+	b: black;
+	c: blue;
+	d: fuchsia;
+	e: gray;
+	f: green;
+	g: lime;
+	h: maroon;
+	i: navy;
+	j: olive;
+	k: purple;
+	l: red;
+	m: silver;
+	n: teal;
+	o: white;
+	p: yellow;
+	q: #f00;
+	r: #ff0000;
+	s: rgb(255, 0, 0);
+	t: rgb(50%, 50%, 0%);
+}
+
+/** Test angle properties */
+PH {
+	a: 90deg;
+/*	b: 10grad;*/
+	c: 1.5rad;
+}
+
+/** Test time properties */
+PI {
+	a: 50ms;
+	b: 60s;
+}
+
+/** Test frequency properties */
+PJ {
+	a: 5Hz;
+	b: 50kHz;
+}
+
+/** Test string properties */
+PK {
+	a: 'hello world !';
+	b: "hello world 2 !";
+}
+
+/** Test !important rules */
+IA {
+	a: test !important;
+}
+
+/** Test multiple valued rules */
+MA {
+	a: a b c;
+}
+
+/** Test inheritance */
+HA {
+	a: 1;
+	b: 'hello';
+	c: red;
+}
+HA {
+	a: 2;
+	b: "world";
+	c: blue;
+	d: left;
+}
+
+/** Test override */
+OA {
+	a: 1;
+	b: 2;
+	a: 3;
+	b: 4;
+}

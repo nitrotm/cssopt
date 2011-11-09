@@ -1,0 +1,9 @@
+cssopt
+------
+
+A java-based CSS beautifier / shrinker.
+
+It transforms the layout of an input CSS using W3C sac/flute.
+
+
+Subject to W3C licensing terms (COPYRIGHT.HTML)
